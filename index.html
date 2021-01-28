@@ -21,9 +21,8 @@
 
   <div class="container">
 
-    <div class="button_cont"><a class="example_a" onclick="main()">Start</a></div>
-    <div class="button_cont"><a class="example_a" id="restartButton"> restart</a></div>
-    <div class="button_cont"><a class="example_a" onclick="main()">speed up</a></div>
+    <div class="neonShadow"><span class="neonSpan" onclick="main()">Start</span></div>
+    <div class="neonShadow"><span class="neonSpan" id="restartButton"> restart</span></div>
     <h1 id="title">Press Start to play</h1>
 
     <div class="level-container">
@@ -37,6 +36,8 @@
         <li class="level"><button onclick="mainLevel3()">level 3</button></li>
         <li class="level"><button onclick="mainLevel4()">level 4</button></li>
         <li class="level"><button onclick="mainLevel5()">level 5</button></li>
+        <li class="level"><button onclick="mainLevel6()">Impossible level</button></li>
+        <!-- <li class="impossible2"><button>Are you sure?</button></li> -->
       </ul>
     </div>
 
@@ -50,8 +51,8 @@
 
   </div>
 
-  <script>
 
+  <script>
     /*primary vars*/
 
     const snakeboard = document.getElementById("mainArea");
@@ -105,7 +106,10 @@
 
     function main() {
 
-      if (hasGameEnded()) return;
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
       changingDirection = false;
       setTimeout(function onTick() {
         clearCanvas();
@@ -120,7 +124,10 @@
 
     function mainLevel1() {
 
-      if (hasGameEnded()) return;
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
       changingDirection = false;
       setTimeout(function onTick() {
         clearCanvas();
@@ -135,7 +142,10 @@
 
     function mainLevel2() {
 
-      if (hasGameEnded()) return;
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
       changingDirection = false;
       setTimeout(function onTick() {
         clearCanvas();
@@ -150,7 +160,10 @@
 
     function mainLevel3() {
 
-      if (hasGameEnded()) return;
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
       changingDirection = false;
       setTimeout(function onTick() {
         clearCanvas();
@@ -165,7 +178,10 @@
 
     function mainLevel4() {
 
-      if (hasGameEnded()) return;
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
       changingDirection = false;
       setTimeout(function onTick() {
         clearCanvas();
@@ -180,7 +196,10 @@
 
     function mainLevel5() {
 
-      if (hasGameEnded()) return;
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
       changingDirection = false;
       setTimeout(function onTick() {
         clearCanvas();
@@ -193,12 +212,37 @@
       }, 60)
     }
 
+    function mainLevel6() {
+
+      if (hasGameEnded()) {
+        background.pause();
+        return;
+      }
+      changingDirection = false;
+      setTimeout(function onTick() {
+        clearCanvas();
+        drawFood();
+        backgrounSoundPlayer();
+        drawSnake();
+        drawSnakeHead();
+        moveSnake();
+        mainLevel6();
+      }, 30)
+    }
+
+    // function impossible1() {
+
+    //   $(".impossible2").toggleClass('isVisible');;
+    // };
+
 
     function changeDirection(event) {
+      if (changingDirection) return;
       const leftKey = 37;
       const rightKey = 39;
       const upKey = 38;
       const downKey = 40;
+      changingDirection = true;
 
       const keyPressed = event.keyCode;
       const goingUp = dy === -10;
@@ -326,7 +370,7 @@
     }
 
     $("#level-title").click(function () {
-      $(".levels").addClass('isVisible');
+      $(".levels").toggleClass('isVisible');
     });
 
 
