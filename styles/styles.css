@@ -1,0 +1,84 @@
+.container {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.levels {
+  padding: 0.5em;
+  display: none;
+  list-style: none;
+}
+
+.level {
+  padding: 0.5em;
+}
+
+.isVisible {
+  display: block;
+}
+
+.level-container {
+  text-align: center;
+}
+
+.level-container > h2 {
+  padding-left: 5px;
+  text-align: center;
+}
+
+#score {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+h1 {
+  line-height: 1.4em;
+}
+
+p {
+  text-align: center;
+}
+
+#small {
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+  display: inline-block;
+  margin-left: 4.9em;
+}
+
+.example_a {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  float: left;
+  margin: 0.5em;
+  cursor: pointer;
+  background: #ed3330;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+.example_a:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+#mainArea {
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
