@@ -31,6 +31,12 @@
   font-size: 2.5em;
 }
 
+.impossible2 {
+  padding: 0.5em;
+  display: none;
+  list-style: none;
+}
+
 h1 {
   line-height: 1.4em;
 }
@@ -49,29 +55,56 @@ p {
   margin-left: 4.9em;
 }
 
-.example_a {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
+.neonShadow {
+  height: 50px;
+  margin: 1.5em;
   float: left;
-  margin: 0.5em;
-  cursor: pointer;
-  background: #ed3330;
-  padding: 20px;
-  border-radius: 5px;
-  display: inline-block;
+  width: 100px;
   border: none;
-  transition: all 0.4s ease 0s;
+  border-radius: 50px;
+  transition: 0.3s;
+  background-color: rgba(156, 161, 160, 0.3);
+  animation: glow 1s infinite;
+  transition: 0.5s;
+}
+.neonSpan {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding-top: 15%;
+  padding-right: 2.5%;
+  padding-left: 1em;
+  margin-right: 0px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  opacity: 0.4;
+}
+.neonSpan:hover {
+  transition: 0.3s;
+  opacity: 1;
+  font-weight: 700;
 }
 
-.example_a:hover {
-  background: #434343;
-  letter-spacing: 1px;
-  cursor: pointer;
-  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
-  transition: all 0.4s ease 0s;
+.neonShadow:hover {
+  transform: translateX(-20px) rotate(30deg);
+  border-radius: 5px;
+  background-color: #c3bacc;
+  transition: 0.5s;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 5px 5px 20px rgb(93, 52, 168), -5px -5px 20px rgb(93, 52, 168);
+  }
+
+  50% {
+    box-shadow: 5px 5px 20px rgb(81, 224, 210), -5px -5px 20px rgb(81, 224, 210);
+  }
+  100% {
+    box-shadow: 5px 5px 20px rgb(93, 52, 168), -5px -5px 20px rgb(93, 52, 168);
+  }
 }
 
 #mainArea {
